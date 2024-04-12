@@ -22,9 +22,8 @@ namespace Test.UnitCommands
         [RunnableInDebugOnly]
         public void DeleteAllTestDatabasesOk()
         {
-            var numDeleted = DatabaseTidyHelper
-                .DeleteAllUnitTestDatabases();
-            _output.WriteLine("This deleted {0} databases.", numDeleted);
+            //var numDeleted = DatabaseTidyHelper.DeleteAllUnitTestDatabases();
+            //_output.WriteLine("This deleted {0} databases.", numDeleted);
         }
     }
 }
