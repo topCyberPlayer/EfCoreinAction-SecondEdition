@@ -44,7 +44,7 @@ namespace Test.UnitTests.TestDataLayer
         public void TestSeedingOnMigrateSqliteOk()
         {
             //SETUP
-            var options = SqliteInMemory.CreateOptionsWithLogging<SeedExampleDbContext>(log => _output.WriteLine(log.ToString()));
+            var options = SqliteInMemory.CreateOptionsWithLogTo<SeedExampleDbContext>(log => _output.WriteLine(log.ToString()));
             using (var context = new SeedExampleDbContext(options))
             {
                 //ATTEMPT

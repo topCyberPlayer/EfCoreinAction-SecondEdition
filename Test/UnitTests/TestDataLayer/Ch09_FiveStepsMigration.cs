@@ -169,7 +169,7 @@ SET [AddressId] = (SELECT [AddressId]
         public void GetApp1CreateTablesOk()
         {
             //SETUP
-            var options = this.CreateUniqueClassOptionsWithLogging<App1DbContext>(log => _output.WriteLine(log.Message));
+            var options = this.CreateUniqueMethodOptionsWithLogTo<App1DbContext>(log => _output.WriteLine(log));
             using (var context = new App1DbContext(options))
             {
                 context.Database.EnsureClean();
@@ -180,7 +180,7 @@ SET [AddressId] = (SELECT [AddressId]
         public void GetApp2CreateTablesOk()
         {
             //SETUP
-            var options = this.CreateUniqueClassOptionsWithLogging<App2DbContext>(log => _output.WriteLine(log.Message));
+            var options = this.CreateUniqueMethodOptionsWithLogTo<App2DbContext>(log => _output.WriteLine(log));
             using (var context = new App2DbContext(options))
             {
                 context.Database.EnsureClean();
@@ -191,7 +191,7 @@ SET [AddressId] = (SELECT [AddressId]
         public void GetApp3CreateTablesOk()
         {
             //SETUP
-            var options = this.CreateUniqueClassOptionsWithLogging<App3DbContext>(log => _output.WriteLine(log.Message));
+            var options = this.CreateUniqueMethodOptionsWithLogTo<App3DbContext>(log => _output.WriteLine(log));
             using (var context = new App3DbContext(options))
             {
                 context.Database.EnsureClean();

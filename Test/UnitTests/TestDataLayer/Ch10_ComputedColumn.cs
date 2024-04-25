@@ -48,7 +48,7 @@ namespace Test.UnitTests.TestDataLayer
         {
             //SETUP
             var showLog = false;
-            var options = this.CreateUniqueClassOptionsWithLogging<Chapter10DbContext>(log =>
+            var options = this.CreateUniqueMethodOptionsWithLogTo<Chapter10DbContext>(log =>
             {
                 if (showLog)
                     _output.WriteLine(log.ToString());
@@ -97,7 +97,7 @@ namespace Test.UnitTests.TestDataLayer
         {
             //SETUP
             var showLog = false;
-            var options = this.CreateUniqueClassOptionsWithLogging<Chapter10DbContext>(log =>
+            var options = this.CreateUniqueClassOptionsWithLogTo<Chapter10DbContext>(log =>
             {
                 if (showLog)
                     _output.WriteLine(log.ToString());

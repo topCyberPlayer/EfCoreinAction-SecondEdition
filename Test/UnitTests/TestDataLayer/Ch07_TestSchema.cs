@@ -25,7 +25,7 @@ namespace Test.UnitTests.TestDataLayer
         {
             //SETUP
             var logs = new List<string>();
-            var options = this.CreateUniqueClassOptionsWithLogging<Chapter07DbContext>(log => logs.Add(log.Message));
+            var options = this.CreateUniqueClassOptionsWithLogTo<Chapter07DbContext>(log => logs.Add(log));
             using (var context = new Chapter07DbContext(options))
             {
                 //ATTEMPT

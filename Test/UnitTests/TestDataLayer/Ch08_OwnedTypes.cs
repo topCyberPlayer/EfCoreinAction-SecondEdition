@@ -70,7 +70,7 @@ namespace Test.UnitTests.TestDataLayer
         {
             //SETUP
             var showLog = false;
-            var options = this.CreateUniqueClassOptionsWithLogging<SplitOwnDbContext>(log =>
+            var options = this.CreateUniqueMethodOptionsWithLogTo<SplitOwnDbContext>(log =>
             {
                 if (showLog)
                     _output.WriteLine(log.ToString());
@@ -144,7 +144,7 @@ namespace Test.UnitTests.TestDataLayer
         {
             //SETUP
             var showLog = false;
-            var options = SqliteInMemory.CreateOptionsWithLogging<SplitOwnDbContext>(log =>
+            var options = SqliteInMemory.CreateOptionsWithLogTo<SplitOwnDbContext>(log =>
             {
                 if (showLog)
                     _output.WriteLine(log.ToString());
@@ -188,7 +188,7 @@ namespace Test.UnitTests.TestDataLayer
         {
             //SETUP
             var showLog = false;
-            var options = SqliteInMemory.CreateOptionsWithLogging<SplitOwnDbContext>(log =>
+            var options = SqliteInMemory.CreateOptionsWithLogTo<SplitOwnDbContext>(log =>
             {
                 if (showLog)
                     _output.WriteLine(log.ToString());
@@ -213,7 +213,7 @@ namespace Test.UnitTests.TestDataLayer
         {
             //SETUP
             var showLog = false;
-            var options = SqliteInMemory.CreateOptionsWithLogging<SplitOwnDbContext>(log =>
+            var options = SqliteInMemory.CreateOptionsWithLogTo<SplitOwnDbContext>(log =>
             {
                 if (showLog)
                     _output.WriteLine(log.ToString());
@@ -260,7 +260,7 @@ namespace Test.UnitTests.TestDataLayer
         {
             //SETUP
             var showLog = false;
-            var options = SqliteInMemory.CreateOptionsWithLogging<SplitOwnDbContext>(log =>
+            var options = SqliteInMemory.CreateOptionsWithLogTo<SplitOwnDbContext>(log =>
             {
                 if (showLog)
                     _output.WriteLine(log.ToString());
@@ -286,7 +286,7 @@ namespace Test.UnitTests.TestDataLayer
         {
             //SETUP
             var showLog = false;
-            var options = SqliteInMemory.CreateOptionsWithLogging<SplitOwnDbContext>(log =>
+            var options = SqliteInMemory.CreateOptionsWithLogTo<SplitOwnDbContext>(log =>
             {
                 if (showLog)
                     _output.WriteLine(log.ToString());
@@ -312,7 +312,7 @@ namespace Test.UnitTests.TestDataLayer
         {
             //SETUP
             var showLog = false;
-            var options = this.CreateUniqueClassOptionsWithLogging<SplitOwnDbContext>(log =>
+            var options = this.CreateUniqueClassOptionsWithLogTo<SplitOwnDbContext>(log =>
             {
                 if (showLog)
                     _output.WriteLine(log.ToString());

@@ -25,7 +25,7 @@ namespace Test.UnitTests.TestDataLayer
         public void TestCreateSplitOwnDbContextSqlServerDbOk()
         {
             //SETUP
-            var options = this.CreateUniqueMethodOptionsWithLogging<SplitOwnDbContext>(log => _output.WriteLine(log.Message));
+            var options = this.CreateUniqueMethodOptionsWithLogTo<SplitOwnDbContext>(log => _output.WriteLine(log));
             using (var context = new SplitOwnDbContext(options))
             {
                 //ATTEMPT
@@ -41,7 +41,7 @@ namespace Test.UnitTests.TestDataLayer
             //SETUP
 
             var showLog = false;
-            var options = this.CreateUniqueClassOptionsWithLogging<Chapter08DbContext>(log =>
+            var options = this.CreateUniqueMethodOptionsWithLogTo<Chapter08DbContext>(log =>
             {
                 if (showLog)
                     _output.WriteLine(log.ToString());
@@ -76,7 +76,7 @@ namespace Test.UnitTests.TestDataLayer
         {
             //SETUP
             var showLog = false;
-            var options = this.CreateUniqueClassOptionsWithLogging<Chapter08DbContext>(log =>
+            var options = this.CreateUniqueMethodOptionsWithLogTo<Chapter08DbContext>(log =>
             {
                 if (showLog)
                     _output.WriteLine(log.ToString());

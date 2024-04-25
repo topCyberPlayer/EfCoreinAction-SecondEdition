@@ -46,7 +46,7 @@ namespace Test.UnitTests.TestDataLayer
         {
             //SETUP
             var showLog = false;
-            var options = this.CreateUniqueClassOptionsWithLogging<SplitOwnDbContext>(log =>
+            var options = this.CreateUniqueMethodOptionsWithLogTo<SplitOwnDbContext>(log =>
             {
                 if (showLog)
                     _output.WriteLine(log.ToString());
