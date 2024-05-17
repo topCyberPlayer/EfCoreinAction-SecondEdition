@@ -1,13 +1,11 @@
 ﻿// Copyright (c) 2020 Jon P Smith, GitHub: JonPSmith, web: http://www.thereformedprogrammer.net/
 // Licensed under MIT license. See License.txt in the project root for license information.
 
-using System.Linq;
 using BookApp.Persistence.EfCoreSql.Books;
-using BookApp.ServiceLayer.DefaultSql.Books;
-using BookApp.ServiceLayer.DefaultSql.Books.Dtos;
 using BookApp.ServiceLayer.DefaultSql.Books.QueryObjects;
 using BookApp.ServiceLayer.DisplayCommon.Books.Dtos;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using Test.TestHelpers;
 using TestSupport.EfHelpers;
 using Xunit;
@@ -219,10 +217,8 @@ namespace Test.UnitTests.TestServiceLayerDefaultSqlBooks
                 context.SeedDatabaseFourBooks();
 
                 //ATTEMPT
-                var books =
-                    context.Books.FromSqlRaw(
-                            "SELECT * FROM Books AS a ORDER BY (SELECT AVG(b.NumStars) FROM Review AS b WHERE b.BookId = a.BookId) DESC")
-                        .ToList();
+                var books = RelationalQueryableExtensions.FromSqlRaw(context.Books,
+                    "SELECT * FROM Books AS a ORDER BY (SELECT AVG(b.NumStars) FROM Review AS b WHERE b.BookId = a.BookId) DESC").ToList();
 
                 //VERIFY
                 books.First().Title.ShouldEqual("Quantum Networking");

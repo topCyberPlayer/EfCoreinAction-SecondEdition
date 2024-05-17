@@ -26,7 +26,7 @@ namespace Test.UnitTests.Chapter17Tests
         //see https://docs.microsoft.com/en-us/ef/core/modeling/dynamic-model
         private class DynamicModelCacheKeyFactory : IModelCacheKeyFactory
         {
-            public object Create(DbContext context)
+            public object Create(DbContext context, bool designTime)
                 => context is DiffConfigDbContext dynamicContext
                     ? (context.GetType(), dynamicContext.Config)
                     : (object)context.GetType();
