@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="EfCore.GenericEventRunner.DomainParts" Version="2.2.1" />
-    <PackageReference Include="GenericServices.StatusGeneric" Version="1.1.0" />
+    <PackageReference Include="GenericServices.StatusGeneric" Version="1.2.0" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
